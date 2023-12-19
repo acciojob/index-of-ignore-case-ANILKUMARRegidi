@@ -3,7 +3,7 @@
   const subStrLower = s2.toLowerCase();
   const indexLimit = strLower.length - subStrLower.length;
 
-  for (let i = 0; i <= strLower.length; i++) {
+  for (let i = 0; i <= indexLimit; i++) { // Fix 1: Change the loop condition
     let found = true;
 
     for (let j = 0; j < subStrLower.length; j++) {
@@ -13,8 +13,8 @@
       }
     }
 
-    if (!found) {
-      return indexLimit;
+    if (found) { // Fix 2: Change the condition here
+      return i;
     }
   }
 
